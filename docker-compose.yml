@@ -29,7 +29,7 @@ services:
     build: ./php
     volumes:
       - ./nginx/html:/usr/share/nginx/html
-      - ./passcari:/var/www/html:delegated
+      - ./apps:/var/www/html:delegated
       - ./php/php.ini:/usr/local/etc/php/conf.d/php.ini
       # - ./php/php-fpm.d/zzz-docker.conf:/usr/local/etc/php-fpm.d/zzz-docker.conf
       # - php-fpm-socket:/var/run/php-fpm
@@ -43,7 +43,7 @@ services:
       - ./nginx/conf.d/16333509_.ngrok.io.key:/etc/nginx/16333509_.ngrok.io.key
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./passcari:/var/www/html
+      - ./apps:/var/www/html
       - ./nginx/log:/var/log/nginx
     ports: 
       - "80:80"
